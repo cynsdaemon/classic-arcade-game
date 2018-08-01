@@ -17,7 +17,7 @@ This project uses the following guides and libraries:
 
 - Frontend Nanodegree [Style Guides](https://github.com/udacity/frontend-nanodegree-styleguide)
 - Project Grading Rubric 
-- This repository contains starter code from Udacity's [Arcade Game](https://github.com/udacity/frontend-nanodegree-arcade-game)
+- This repository contains starter code from Udacity's [Arcade Game] project(https://github.com/udacity/frontend-nanodegree-arcade-game)
  
 Contributions and Feedback
 --------
