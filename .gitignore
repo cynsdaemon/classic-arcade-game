@@ -226,3 +226,5 @@ pip-log.txt
 .mr.developer.cfg
 
 TODO.md
+
+node_modules
