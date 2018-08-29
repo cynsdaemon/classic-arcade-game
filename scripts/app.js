@@ -1,5 +1,5 @@
-// Enemy class
-let Enemy = function() {
+/*** ENEMY CLASS ***/
+const Enemy = function() {
     // Variables applied to each of our instances go here,
     this.x = 250 //
     this.y = 300 //
@@ -19,15 +19,15 @@ Enemy.prototype.update = function(dt) {
         // reset pos to start
 };
 
-// Draw the enemy on the screen, required method for game
+// Draw the enemy on the screen
 Enemy.prototype.render = function() {
     ctx.drawImage(Resources.get(this.sprite), this.x, this.y);
 };
 
-// Player class
-let Player = function() {
-    // this.x = 250;
-    // this.y = 300;
+/*** PLAYER CLASS ***/
+const Player = function() {
+    this.x = 125;
+    this.y = 150;
     this.sprite = 'images/char-cat-girl.png';
 };
 
@@ -41,20 +41,21 @@ Player.prototype.update = function(dt){
 
 };
 
-// Player.protoytype.render = function() {
-//     // TODO: rendering the player image
-//     // TODO: draw sprite on current x and y coord position
-//     ctx.drawImage(Resources.get(this.sprite), this.x, this.y);
-// };
+Player.prototype.render = function() {
+    // TODO: rendering the player image
+    // TODO: draw sprite on current x and y coord position
+    ctx.drawImage(Resources.get(this.sprite), this.x, this.y);
+};
 
 Player.prototype.handleInput = function() {
     // Event Handlers:
     // handleInput()
         // event listener for keyboard updates player position
 };
-// init player/enemy objects
-let player = [];
-let allEnemies = [new Enemy()];
+
+/*** INIT PLAYER/ENEMY OBJECTS***/
+const player = new Player();
+const allEnemies = [new Enemy()];
 
 // TODO:
     // for each enemy created, push new Enemy object into above array
@@ -62,7 +63,7 @@ let allEnemies = [new Enemy()];
     // if game is won/lost
     // display modal
 
-/*** You don't need to modify this ***/
+/*** YOU DON'T NEED TO MODIFY THIS ***/
 // This listens for keyboard presses for player character
 document.addEventListener('keyup', function(e) {
     var allowedKeys = {
