@@ -12,7 +12,7 @@ How to play
 --------
 This game is inspired by the [classic Konami 1981 arcade game](https://en.wikipedia.org/wiki/Frogger), Frogger. The player must overcome various platform obstacles to help Frogger safely reach its home at the end of the path.
 
-**To move Frogger:** Use your keyboard's directional arrows (up :arrow_up:, right :arrow_right:, down :arrow_down:, left :arrow_left:) to maneuver around the platform. Colliding with an enemy bug, knocks Frogger back to the beginning of the path, and removes a life :heart: from the life bar. Losing all 5 lives ends the game, and reaching Frogger's watery home at the end of the path wins the game. :sunglasses:
+**To move Frogger:** Use your keyboard's directional arrows (up :arrow_up:, right :arrow_right:, down :arrow_down:, left :arrow_left:) to maneuver around the platform. Colliding with an enemy bug, knocks Frogger back to the beginning of the path, and removes a life :heart: from the life bar. Losing all 5 lives ends the game, and reaching Frogger's watery home at the end of the path wins the level. :sunglasses:
 
 Resources
 --------
