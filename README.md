@@ -2,23 +2,27 @@
 # Classic Arcade Game
 --------
 
-This repo serves as a home for the 'Classic Arcade Game' project in the Udacity [Frontend Web Development](https://www.udacity.com/course/front-end-web-developer-nanodegree--nd001) Nanodegree. 
+This repo serves as a home for the 'Classic Arcade Game' project in the Udacity [Frontend Web Development](https://www.udacity.com/course/front-end-web-developer-nanodegree--nd001) Nanodegree.
 
-You may view the live project [here](https://cynsdaemon.github.io/classic-arcade-game/). Note: You will need to use a modern browser and have JavaScript enabled. 
+This project is an exploration in using object-oriented programming concepts to store and organize information, analyze functions at runtime, and prototypal inheritance and methods.
+
+You may view the live project [here](https://cynsdaemon.github.io/classic-arcade-game/). Note: You will need to use a modern browser and have JavaScript enabled.
 
 How to play
 --------
-tba
+This game is inspired by the classic Konami 1981 arcade game, Frogger. The player must overcome various platform obstacles to help Frogger safely reach its home at the end of the path.
+
+**To move Frogger:** Use your keyboard's directional arrows (up :arrow_up:, right :arrow_right:, down :arrow_down:, left :arrow_left:) to maneuver around the platform. Touching an enemy bug, knocks Frogger back to the beginning of the path, and subtracts a life :heart: from the life bar. Losing all 5 lives ends the game. Reaching Frogger's watery home wins the game. :sunglasses:
 
 Resources
 --------
 
-This project uses the following guides and libraries:
+This project uses the following style guides and repositories:
 
+- Project Grading Rubric
 - Frontend Nanodegree [Style Guides](https://github.com/udacity/frontend-nanodegree-styleguide)
-- Project Grading Rubric 
-- This repository contains starter code from Udacity's [Arcade Game Project](https://github.com/udacity/frontend-nanodegree-arcade-game)
- 
+- This repository contains a simple game engine and script for caching game assets and resources from Udacity's [Arcade Game Project](https://github.com/udacity/frontend-nanodegree-arcade-game) starter code
+
 Contributions and Feedback
 --------
 
