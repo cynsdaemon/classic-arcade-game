@@ -1,8 +1,8 @@
-/*** ENEMY CLASS ***/
+/*** Enemy Class ***/
 const Enemy = function() {
     // Variables applied to each of our instances go here,
-    this.x = 250 //
-    this.y = 300 //
+    this.x = 250
+    this.y = 300
     this.sprite = 'images/enemy-bug.png';
 };
 
@@ -24,54 +24,82 @@ Enemy.prototype.render = function() {
     ctx.drawImage(Resources.get(this.sprite), this.x, this.y);
 };
 
-/*** PLAYER CLASS ***/
+/*** Player Class ***/
 const Player = function() {
+    // properties
     this.x = 125;
-    this.y = 150;
+    this.y = 425;
     this.sprite = 'images/char-cat-girl.png';
+    // methods
+        // update()
+        // render()
 };
 
 // Player methods:
 Player.prototype.update = function(dt){
-    // TODO: update position, update()
-    // check collison here
+    // TODO: player method - update
+    // check hero position
+        // check collison here, checkCollisions();
         // did player x and y collide with enemy?
+            // if true, reset player
+            // else, continue
+        // check game win, checkForVictory()
         // did player reach the water?
-            // check for victory function
+            // does player coords match final tile coords?
+                // if true, call win game condition
+                // else, continue game
 
 };
 
 Player.prototype.render = function() {
-    // TODO: rendering the player image
-    // TODO: draw sprite on current x and y coord position
+    // TODO: player method - render
+        // update position
+            // old coords
+            // new coords
+                // listen for keyboard event
     ctx.drawImage(Resources.get(this.sprite), this.x, this.y);
 };
 
-Player.prototype.handleInput = function() {
-    // Event Handlers:
-    // handleInput()
-        // event listener for keyboard updates player position
+// handle user keyboard input
+Player.prototype.handleInput = function(key) {
+    if(key === 'up') {
+        this.y -= 5;
+
+    } else if(key === 'right') {
+        this.x +=5;
+
+    } else if(key === 'down') {
+        this.y += 5;
+
+    } else if(key === 'left'){
+        this.x -= 5;
+
+    }
+};
+
+Player.prototype.resetHero = function(){
+    // TODO: player method - reset hero
+        // set x and y to starting tile's x and y
 };
 
 /*** INIT PLAYER/ENEMY OBJECTS***/
 const player = new Player();
 const allEnemies = [new Enemy()];
+// TODO: for each enemy created, push new Enemy object into above array
 
-// TODO:
-    // for each enemy created, push new Enemy object into above array
-// TODO: Reset game
-    // if game is won/lost
-    // display modal
 
-/*** YOU DON'T NEED TO MODIFY THIS ***/
+
+
 // This listens for keyboard presses for player character
-document.addEventListener('keyup', function(e) {
-    var allowedKeys = {
-        37: 'left',
+document.addEventListener('keydown', function(event) {
+    let allowedKeys = {
         38: 'up',
         39: 'right',
-        40: 'down'
+        40: 'down',
+        37: 'left'
     };
 
-    player.handleInput(allowedKeys[e.keyCode]);
+    let key = event.keyCode;
+    player.handleInput(allowedKeys[key]);
+
 });
