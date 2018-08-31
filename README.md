@@ -4,15 +4,15 @@
 
 This repo serves as a home for the 'Classic Arcade Game' project in the Udacity [Frontend Web Development](https://www.udacity.com/course/front-end-web-developer-nanodegree--nd001) Nanodegree.
 
-This project is an exploration in using object-oriented programming concepts to store and organize information, analyze functions at runtime, and prototypal inheritance and methods.
+This project is an exploration in using object-oriented programming concepts to store and organize information, analyze functions at runtime, and using prototypal inheritance and methods.
 
 You may view the live project [here](https://cynsdaemon.github.io/classic-arcade-game/). Note: You will need to use a modern browser and have JavaScript enabled.
 
 How to play
 --------
-This game is inspired by the classic Konami 1981 arcade game, Frogger. The player must overcome various platform obstacles to help Frogger safely reach its home at the end of the path.
+This game is inspired by the [classic Konami 1981 arcade game](https://en.wikipedia.org/wiki/Frogger), Frogger. The player must overcome various platform obstacles to help Frogger safely reach its home at the end of the path.
 
-**To move Frogger:** Use your keyboard's directional arrows (up :arrow_up:, right :arrow_right:, down :arrow_down:, left :arrow_left:) to maneuver around the platform. Touching an enemy bug, knocks Frogger back to the beginning of the path, and subtracts a life :heart: from the life bar. Losing all 5 lives ends the game. Reaching Frogger's watery home wins the game. :sunglasses:
+**To move Frogger:** Use your keyboard's directional arrows (up :arrow_up:, right :arrow_right:, down :arrow_down:, left :arrow_left:) to maneuver around the platform. Colliding with an enemy bug, knocks Frogger back to the beginning of the path, and removes a life :heart: from the life bar. Losing all 5 lives ends the game, and reaching Frogger's watery home at the end of the path wins the game. :sunglasses:
 
 Resources
 --------
