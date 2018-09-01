@@ -55,16 +55,16 @@ Player.prototype.render = function() {
 
 // handle user keyboard input
 Player.prototype.handleInput = function(key) {
-    if(key === 'up') {
+    if(key === 'up' && player.y >= -9) {
         this.y -= 5;
 
-    } else if(key === 'right') {
+    } else if(key === 'right' && player.x <= 419) {
         this.x +=5;
 
-    } else if(key === 'down') {
+    } else if(key === 'down' && player.y <= 444) {
         this.y += 5;
 
-    } else if(key === 'left'){
+    } else if(key === 'left' && player.x >= -14){
         this.x -= 5;
 
     }
