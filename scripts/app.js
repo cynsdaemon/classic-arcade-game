@@ -30,9 +30,6 @@ const Player = function() {
     this.x = 125;
     this.y = 425;
     this.sprite = 'images/char-cat-girl.png';
-    // methods
-        // update()
-        // render()
 };
 
 // Player methods:
@@ -51,12 +48,8 @@ Player.prototype.update = function(dt){
 
 };
 
+// draw player character
 Player.prototype.render = function() {
-    // TODO: player method - render
-        // update position
-            // old coords
-            // new coords
-                // listen for keyboard event
     ctx.drawImage(Resources.get(this.sprite), this.x, this.y);
 };
 
@@ -86,8 +79,6 @@ Player.prototype.resetHero = function(){
 const player = new Player();
 const allEnemies = [new Enemy()];
 // TODO: for each enemy created, push new Enemy object into above array
-
-
 
 
 // This listens for keyboard presses for player character
