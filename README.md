@@ -12,15 +12,16 @@ How to play
 --------
 This game is inspired by the [classic Konami 1981 arcade game](https://en.wikipedia.org/wiki/Frogger), Frogger. The player must overcome various platform obstacles to help Frogger safely reach its home at the end of the path.
 
-**To move Frogger:** Use your keyboard's directional arrows (up :arrow_up:, right :arrow_right:, down :arrow_down:, left :arrow_left:) to maneuver around the platform. Colliding with an enemy bug, knocks Frogger back to the beginning of the path, and removes a life :heart: from the life bar. Losing all 5 lives ends the game, and reaching Frogger's watery home at the end of the path wins the level. :sunglasses:
+Colliding with an enemy bug, knocks Frogger back to the beginning of the path, and removes a life :heart: from the life bar. Losing all 5 lives ends the game, and reaching Frogger's watery home at the end of the path wins the level. :sunglasses:
+
+**To move Frogger:** Use your keyboard's directional arrows (up :arrow_up:, right :arrow_right:, down :arrow_down:, left :arrow_left:) to maneuver around the platform.
 
 Resources
 --------
 
 This project uses the following style guides and repositories:
 
-- Project Grading Rubric
-- Frontend Nanodegree [Style Guides](https://github.com/udacity/frontend-nanodegree-styleguide)
+- Udacity's Project Grading Rubric and Frontend Nanodegree [Style Guides](https://github.com/udacity/frontend-nanodegree-styleguide)
 - This repository contains a simple game engine and script for caching game assets and resources from Udacity's [Arcade Game Project](https://github.com/udacity/frontend-nanodegree-arcade-game) starter code
 
 Contributions and Feedback

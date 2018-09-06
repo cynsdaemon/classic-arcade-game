@@ -1,8 +1,11 @@
 /*** Enemy Class ***/
 const Enemy = function() {
-    // Variables applied to each of our instances go here,
-    this.x = 250
-    this.y = 300
+   // Enemy start position
+    this.startX = 250;
+    this.startY = 300;
+    this.x = this.startX;
+    this.y = this.startY;
+
     this.sprite = 'images/enemy-bug.png';
 };
 
@@ -26,26 +29,33 @@ Enemy.prototype.render = function() {
 
 /*** Player Class ***/
 const Player = function() {
-    // properties
-    this.x = 125;
-    this.y = 425;
+    // Player start position
+    this.startX = 100;
+    this.startY = 435;
+
+    this.x = this.startX;
+    this.y = this.startY;
+
     this.sprite = 'images/char-cat-girl.png';
 };
 
 // Player methods:
-Player.prototype.update = function(dt){
-    // TODO: player method - update
-    // check hero position
-        // check collison here, checkCollisions();
-        // did player x and y collide with enemy?
-            // if true, reset player
-            // else, continue
-        // check game win, checkForVictory()
-        // did player reach the water?
-            // does player coords match final tile coords?
-                // if true, call win game condition
-                // else, continue game
+Player.prototype.update = function(dt) {
+    // check collison
+    for(let enemy of allEnemies){
+        if(this.x === enemy.x && this.y === enemy.y) {
+            alert("Collision detected!");
+            // reset player
+            // player loses a life
 
+        }
+    }
+    // check for goal
+    if(player.y <= -9) {
+        alert("You won!"); // use a modal
+        this.x = 125; // call win game
+        this.y = 425;
+        } // else continue or call main/update function?
 };
 
 // draw player character
@@ -57,7 +67,6 @@ Player.prototype.render = function() {
 Player.prototype.handleInput = function(key) {
     if(key === 'up' && player.y >= -9) {
         this.y -= 5;
-
     } else if(key === 'right' && player.x <= 419) {
         this.x +=5;
 
@@ -66,7 +75,6 @@ Player.prototype.handleInput = function(key) {
 
     } else if(key === 'left' && player.x >= -14){
         this.x -= 5;
-
     }
 };
 
@@ -79,7 +87,6 @@ Player.prototype.resetHero = function(){
 const player = new Player();
 const allEnemies = [new Enemy()];
 // TODO: for each enemy created, push new Enemy object into above array
-
 
 // This listens for keyboard presses for player character
 document.addEventListener('keydown', function(event) {
