@@ -1,11 +1,13 @@
 /*** Enemy Class ***/
 const Enemy = function() {
-   // Enemy start position
+
+    // enemy start position
     this.startX = 250;
     this.startY = 300;
     this.x = this.startX;
     this.y = this.startY;
 
+    // set enemy img
     this.sprite = 'images/enemy-bug.png';
 };
 
@@ -29,30 +31,34 @@ Enemy.prototype.render = function() {
 
 /*** Player Class ***/
 const Player = function() {
-    // Player start position
-    this.startX = 100;
+
+    // player start position
+    this.startX = 0;
     this.startY = 435;
 
     this.x = this.startX;
     this.y = this.startY;
 
+    // set player character img
     this.sprite = 'images/char-cat-girl.png';
 };
 
 // Player methods:
 Player.prototype.update = function() {
-    // check collison
+
+    // Check for player collison
+
     for(let enemy of allEnemies){
         if(this.x < enemy.x + 50 && this.x + 50 > enemy.x && this.y < enemy.y + 40 && this.y + 40 > enemy.y) {
 
+            // what's the collision location
             console.log(`Player: x: ${player.x}, y: ${player.y}`);
-
             console.log(`Enemy: x: ${enemy.x}, y: ${enemy.y}`);
 
             // collision detected!
             console.log("Collision detected!");
 
-            // reset player
+            // reset player position
             this.startX;
             this.startY;
 
@@ -65,7 +71,7 @@ Player.prototype.update = function() {
 
 Player.prototype.resetHero = function(){
     // check for goal
-    if(player.y <= -9) {
+    if(player.y === -15 && player.x <= 400) {
         alert("You won!"); // use a modal
         this.startX; // call win game
         this.startY;
@@ -79,16 +85,16 @@ Player.prototype.render = function() {
 
 // handle user keyboard input
 Player.prototype.handleInput = function(key) {
-    if(key === 'up' && player.y >= -9) {
-        this.y -= 5;
-    } else if(key === 'right' && player.x <= 419) {
-        this.x +=5;
+    if(key === 'up' && player.y >= -14) {
+        this.y -= 50;
+    } else if(key === 'right' && player.x <= 399) {
+        this.x +=50;
 
-    } else if(key === 'down' && player.y <= 444) {
-        this.y += 5;
+    } else if(key === 'down' && player.y <= 434) {
+        this.y += 50;
 
-    } else if(key === 'left' && player.x >= -14){
-        this.x -= 5;
+    } else if(key === 'left' && player.x >= 1){
+        this.x -= 50;
     }
 };
 
