@@ -10,7 +10,7 @@ const Enemy = function() {
 };
 
 // Enemy methods:
-Enemy.prototype.update = function(dt) {
+Enemy.prototype.update = function() {
     // You should multiply any movement by the dt parameter
     // which will ensure the game runs at the same speed for
     // all computers.
@@ -40,22 +40,36 @@ const Player = function() {
 };
 
 // Player methods:
-Player.prototype.update = function(dt) {
+Player.prototype.update = function() {
     // check collison
     for(let enemy of allEnemies){
-        if(this.x === enemy.x && this.y === enemy.y) {
-            alert("Collision detected!");
+        if(this.x < enemy.x + 50 && this.x + 50 > enemy.x && this.y < enemy.y + 40 && this.y + 40 > enemy.y) {
+
+            console.log(`Player: x: ${player.x}, y: ${player.y}`);
+
+            console.log(`Enemy: x: ${enemy.x}, y: ${enemy.y}`);
+
+            // collision detected!
+            console.log("Collision detected!");
+
             // reset player
-            // player loses a life
+            this.startX;
+            this.startY;
 
         }
     }
+
+};
+
+// TODO: player loses a life
+
+Player.prototype.resetHero = function(){
     // check for goal
     if(player.y <= -9) {
         alert("You won!"); // use a modal
-        this.x = 125; // call win game
-        this.y = 425;
-        } // else continue or call main/update function?
+        this.startX; // call win game
+        this.startY;
+        } // TODO: else continue or call main/update function?
 };
 
 // draw player character
@@ -78,17 +92,12 @@ Player.prototype.handleInput = function(key) {
     }
 };
 
-Player.prototype.resetHero = function(){
-    // TODO: player method - reset hero
-        // set x and y to starting tile's x and y
-};
-
-/*** INIT PLAYER/ENEMY OBJECTS***/
+/*** init Player/Enemy objects ***/
 const player = new Player();
 const allEnemies = [new Enemy()];
 // TODO: for each enemy created, push new Enemy object into above array
 
-// This listens for keyboard presses for player character
+// This listens for user keyboard presses for player character
 document.addEventListener('keydown', function(event) {
     let allowedKeys = {
         38: 'up',
