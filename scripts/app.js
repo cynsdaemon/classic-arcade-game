@@ -62,6 +62,7 @@ Player.prototype.update = function() {
         }
     }
 
+    // check for win
     if(player.y === -15) {
         player.resetHero();
     }
