@@ -1,11 +1,11 @@
 /*** Enemy Class ***/
 const Enemy = function() {
-
     // enemy start position
-    this.startX = 250;
-    this.startY = 300;
-    this.x = this.startX;
-    this.y = this.startY;
+    this.x = 250;
+    this.y = 300;
+
+    this.startX = this.x;
+    this.startY = this.y;
 
     // set enemy img
     this.sprite = 'images/enemy-bug.png';
@@ -33,11 +33,11 @@ Enemy.prototype.render = function() {
 const Player = function() {
 
     // player start position
-    this.startX = 0;
-    this.startY = 435;
+    this.x = 0;
+    this.y = 435;
 
-    this.x = this.startX;
-    this.y = this.startY;
+    this.startX = this.x;
+    this.startY = this.y;
 
     // set player character img
     this.sprite = 'images/char-cat-girl.png';
@@ -47,7 +47,6 @@ const Player = function() {
 Player.prototype.update = function() {
 
     // Check for player collison
-
     for(let enemy of allEnemies){
         if(this.x < enemy.x + 50 && this.x + 50 > enemy.x && this.y < enemy.y + 40 && this.y + 40 > enemy.y) {
 
@@ -59,23 +58,19 @@ Player.prototype.update = function() {
             console.log("Collision detected!");
 
             // reset player position
-            this.startX;
-            this.startY;
-
+            player.resetHero();
         }
+    }
+
+    if(player.y === -15) {
+        player.resetHero();
     }
 
 };
 
-// TODO: player loses a life
-
 Player.prototype.resetHero = function(){
-    // check for goal
-    if(player.y === -15 && player.x <= 400) {
-        alert("You won!"); // use a modal
-        this.startX; // call win game
-        this.startY;
-        } // TODO: else continue or call main/update function?
+    this.x = this.startX;
+    this.y = this.startY;
 };
 
 // draw player character
