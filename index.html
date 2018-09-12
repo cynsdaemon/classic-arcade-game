@@ -3,11 +3,39 @@
 <head>
     <meta charset="UTF-8">
     <title>Classic Arcade Game: Frogger</title>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
     <link rel="stylesheet" href="css/style.css">
+    <meta name ="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://fonts.googleapis.com/css?family=Coda" rel="stylesheet">
+
 </head>
-<body>
-    <script src="scripts/resources.js"></script>
-    <script src="scripts/app.js"></script>
-    <script src="scripts/engine.js"></script>
-</body>
+    <body>
+
+        <div id="gameModal" class="modal">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <span class="close">
+                        <i class="fas fa-times"></i>
+                    </span>
+                    <h1>Game Stats</h1>
+                </div>
+
+                <div class ="modal-body">
+                    <p>Lives remaining: 9</p>
+                    <p>Time: 0</p>
+                </div>
+
+                <div class ="modal-footer">
+                    <button id="replay" class ="replaybtn" type ="button">Replay</button>
+                    <span class="replay-icon">
+                        <i class="fas fa-redo-alt"></i>
+                    </span>
+                </div>
+            </div>
+        </div>
+
+        <!-- <script src="scripts/resources.js"></script>
+        <script src="scripts/app.js"></script>
+        <script src="scripts/engine.js"></script> -->
+    </body>
 </html>

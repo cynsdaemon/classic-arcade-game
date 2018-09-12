@@ -23,6 +23,8 @@ This project uses the following style guides and repositories:
 
 - Udacity's Project Grading Rubric and Frontend Nanodegree [Style Guides](https://github.com/udacity/frontend-nanodegree-styleguide)
 - This repository contains a simple game engine and script for caching game assets and resources from Udacity's [Arcade Game Project](https://github.com/udacity/frontend-nanodegree-arcade-game) starter code
+- Icons courtesy of Font Awesome [CC BY 4.0 License](https://fontawesome.com/license). Learn more about [Font Awesome](https://fontawesome.com/) and its [repository](https://github.com/FortAwesome/Font-Awesome).
+- other game fonts courtesty of [Google Fonts](https://fonts.google.com/)
 
 Contributions and Feedback
 --------
