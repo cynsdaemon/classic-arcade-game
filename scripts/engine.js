@@ -78,7 +78,7 @@ let Engine = (function(global) {
         /* Check for victory, if true - stop game loop, display game modal */
         if(player.victory === true) {
             win.cancelAnimationFrame(id);
-            gameModal.style.display = "none";
+            gameModal.style.display = "block";
         } else {
             id = win.requestAnimationFrame(main);
         }
