@@ -1,4 +1,9 @@
-/*** Enemy Class ***/
+/* App.js
+ * Define class/object functions and methods as well as player
+ * character controller inputs in this file.
+*/
+
+// Enemy class
 const Enemy = function() {
     // enemy start position
     this.x = 250;
@@ -24,14 +29,12 @@ Enemy.prototype.update = function() {
         // reset pos to start
 };
 
-// Draw the enemy on the screen
 Enemy.prototype.render = function() {
     ctx.drawImage(Resources.get(this.sprite), this.x, this.y);
 };
 
-/*** Player Class ***/
+// Player class
 const Player = function() {
-
     // player start position
     this.x = 0;
     this.y = 435;
@@ -39,18 +42,21 @@ const Player = function() {
     this.startX = this.x;
     this.startY = this.y;
 
-    // set player character img
+    // set player img
     this.sprite = 'images/char-cat-girl.png';
+
+    // set game victory variable
+    this.victory = false;
+
 };
 
 // Player methods:
 Player.prototype.update = function() {
-
     // Check for player collison
     for(let enemy of allEnemies){
         if(this.x < enemy.x + 50 && this.x + 50 > enemy.x && this.y < enemy.y + 40 && this.y + 40 > enemy.y) {
 
-            // what's the collision location
+            // where's the collision location
             console.log(`Player: x: ${player.x}, y: ${player.y}`);
             console.log(`Enemy: x: ${enemy.x}, y: ${enemy.y}`);
 
@@ -65,6 +71,7 @@ Player.prototype.update = function() {
     // check for win
     if(player.y === -15) {
         player.resetHero();
+        player.victory = true;
     }
 
 };
@@ -74,7 +81,6 @@ Player.prototype.resetHero = function(){
     this.y = this.startY;
 };
 
-// draw player character
 Player.prototype.render = function() {
     ctx.drawImage(Resources.get(this.sprite), this.x, this.y);
 };
@@ -112,3 +118,7 @@ document.addEventListener('keydown', function(event) {
     player.handleInput(allowedKeys[key]);
 
 });
+
+
+
+

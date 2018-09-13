@@ -22,11 +22,30 @@ let Engine = (function(global) {
         win = global.window,
         canvas = doc.createElement('canvas'),
         ctx = canvas.getContext('2d'),
-        lastTime;
+        lastTime,
+        id;
 
     canvas.width = 505;
     canvas.height = 606;
     doc.body.appendChild(canvas);
+
+    // DOM references:
+    const gameModal = document.querySelector('#gameModal');
+    const replayGame = document.querySelector('#replayGame');
+    const closeModal = document.querySelector('#closeModal');
+
+    /* Event listeners for game modal */
+    replayGame.addEventListener('click', function(){
+        // reset player
+        // reset enemies
+        // reset score, if applicable
+        // reset/hide game modal
+    });
+
+    closeModal.addEventListener('click', function(){
+        gameModal.style.display = "none";
+
+    });
 
     /* This function serves as the kickoff point for the game loop itself
      * and handles properly calling the update and render methods.
@@ -55,7 +74,15 @@ let Engine = (function(global) {
         /* Use the browser's requestAnimationFrame function to call this
          * function again as soon as the browser is able to draw another frame.
          */
-        win.requestAnimationFrame(main);
+
+        /* Check for victory, if true - stop game loop, display game modal */
+        if(player.victory === true) {
+            win.cancelAnimationFrame(id);
+            gameModal.style.display = "none";
+        } else {
+            id = win.requestAnimationFrame(main);
+        }
+
     }
 
     /* This function does some initial setup that should only occur once,

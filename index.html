@@ -10,32 +10,35 @@
 
 </head>
     <body>
-
         <div id="gameModal" class="modal">
-            <div class="modal-content">
+            <div class="modal-container">
                 <div class="modal-header">
-                    <span class="close">
-                        <i class="fas fa-times"></i>
+                <button id="closeModal" class="closebtn" type="button">
+                    <span class="close-icon">
+                        <i class="fas fa-times" aria-hidden></i>
                     </span>
+                </button>
                     <h1>Game Stats</h1>
                 </div>
 
                 <div class ="modal-body">
-                    <p>Lives remaining: 9</p>
-                    <p>Time: 0</p>
+                    <p>lives lost: 9</p>
+                    <p>time completed: 0</p>
+                    <p>enemies defeated: 0</p>
                 </div>
 
                 <div class ="modal-footer">
-                    <button id="replay" class ="replaybtn" type ="button">Replay</button>
-                    <span class="replay-icon">
-                        <i class="fas fa-redo-alt"></i>
-                    </span>
+                    <button id="replayGame" class ="replaybtn" type ="button">Replay
+                        <span class="replay-icon">
+                            <i class="fas fa-redo-alt" aria-hidden></i>
+                        </span>
+                    </button>
+
                 </div>
             </div>
         </div>
-
-        <!-- <script src="scripts/resources.js"></script>
+        <script src="scripts/resources.js"></script>
         <script src="scripts/app.js"></script>
-        <script src="scripts/engine.js"></script> -->
+        <script src="scripts/engine.js"></script>
     </body>
 </html>
