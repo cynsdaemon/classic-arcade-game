@@ -4,20 +4,22 @@
 */
 
 // Enemy class
-const Enemy = function() {
+const Enemy = function(x, y) {
     // enemy start position
-    this.x = 250;
-    this.y = 300;
+    this.x = x;
+    this.y = y;
 
     this.startX = this.x;
     this.startY = this.y;
+
+    // this.pace = pace;
 
     // set enemy img
     this.sprite = 'images/enemy-bug.png';
 };
 
 // Enemy methods:
-Enemy.prototype.update = function() {
+Enemy.prototype.update = function(dt) {
     // You should multiply any movement by the dt parameter
     // which will ensure the game runs at the same speed for
     // all computers.
@@ -102,7 +104,18 @@ Player.prototype.handleInput = function(key) {
 
 /*** init Player/Enemy objects ***/
 const player = new Player();
-const allEnemies = [new Enemy()];
+const allEnemies = [];
+
+let slowBug = new Enemy(0, 65);
+let fastBug = new Enemy(0, 150);
+let randomBug = new Enemy(0, 230);
+
+allEnemies.push(slowBug, fastBug, randomBug);
+
+
+
+
+
 // TODO: for each enemy created, push new Enemy object into above array
 
 // This listens for user keyboard presses for player character
