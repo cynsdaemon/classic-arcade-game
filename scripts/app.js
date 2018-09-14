@@ -113,11 +113,6 @@ let randomBug = new Enemy(0, 230);
 allEnemies.push(slowBug, fastBug, randomBug);
 
 
-
-
-
-// TODO: for each enemy created, push new Enemy object into above array
-
 // This listens for user keyboard presses for player character
 document.addEventListener('keydown', function(event) {
     let allowedKeys = {
