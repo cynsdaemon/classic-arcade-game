@@ -4,14 +4,17 @@
  */
 
 // Enemy class
-const Enemy = function(x, y) {
-    // enemy start position
+const Enemy = function(x, y, speed) {
+    // enemy position
     this.x = x;
     this.y = y;
 
     this.startX = this.x;
     this.startY = this.y;
-    // pace = 50;
+
+    // enemy behavior
+    this.speed = speed;
+
     // set enemy img
     this.sprite = 'images/enemy-bug.png';
 };
@@ -23,15 +26,23 @@ Enemy.prototype.update = function(dt) {
     * all computers.
     */
     for(let enemy of allEnemies){
-        if(enemy.x < 435) {
+        if(this.x <= ctx.canvas.width && player.victory === false) {
             // move forward
-            enemy.x += 50 * dt;
+            this.x += this.speed * dt;
+        } else {
+            // reset enemy
+            enemy.resetEnemies();
         }
+    }
+};
+
+Enemy.prototype.resetEnemies = function(){
+
+    for(let enemy of allEnemies){
+
+        this.x = 0;
 
     }
-
-    // else
-        // reset pos to start
 };
 
 Enemy.prototype.render = function() {
@@ -96,26 +107,28 @@ Player.prototype.render = function() {
 Player.prototype.handleInput = function(key) {
     if(key === 'up' && player.y >= -14) {
         this.y -= 50;
-    } else if(key === 'right' && player.x <= 399) {
+    } else if(key === 'right' && this.x <= ctx.canvas.width - 106) {
         this.x +=50;
 
-    } else if(key === 'down' && player.y <= 434) {
+    } else if(key === 'down' && this.y <= ctx.canvas.height - 70) {
         this.y += 50;
 
-    } else if(key === 'left' && player.x >= 1){
+    } else if(key === 'left' && this.x >= 1){
         this.x -= 50;
     }
 };
+
+
 
 /*** init Player/Enemy objects ***/
 const player = new Player();
 const allEnemies = [];
 
-let slowBug = new Enemy(0, 65);
-let fastBug = new Enemy(0, 150);
-let randomBug = new Enemy(0, 230);
+let slowBug = new Enemy(0, 65, 25);
+let fastBug = new Enemy(0, 150, 50);
+// let randomBug = new Enemy(0, 230);
 
-allEnemies.push(slowBug, fastBug, randomBug);
+allEnemies.push(slowBug, fastBug);
 
 // This listens for user keyboard presses for player character
 document.addEventListener('keydown', function(event) {
