@@ -6,7 +6,9 @@ This repo serves as a home for the 'Classic Arcade Game' project in the Udacity 
 
 This project is an exploration in using object-oriented programming concepts to store and organize information, analyze functions at runtime, and using prototypal inheritance and methods.
 
-You may view the live project [here](https://cynsdaemon.github.io/classic-arcade-game/). Note: You will need to use a modern browser and have JavaScript enabled.
+You may view the live project [here](https://cynsdaemon.github.io/classic-arcade-game/). Note: You will need to use a modern web browser and have JavaScript enabled.
+
+**To run game on a local machine** Download or clone the project and open this project's HTML file on your web browser with JavaScript enabled.
 
 How to play
 --------
