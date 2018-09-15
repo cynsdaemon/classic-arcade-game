@@ -1,7 +1,7 @@
 /* App.js
  * Define class/object functions and methods as well as player
  * character controller inputs in this file.
-*/
+ */
 
 // Enemy class
 const Enemy = function(x, y) {
@@ -11,22 +11,25 @@ const Enemy = function(x, y) {
 
     this.startX = this.x;
     this.startY = this.y;
-
-    // this.pace = pace;
-
+    // pace = 50;
     // set enemy img
     this.sprite = 'images/enemy-bug.png';
 };
 
 // Enemy methods:
 Enemy.prototype.update = function(dt) {
-    // You should multiply any movement by the dt parameter
-    // which will ensure the game runs at the same speed for
-    // all computers.
-// TODO: update position:
-    // if enemy is not passed boundary
-        // move forward
-        // increment x by speed * dt
+   /* Multiply enemy movement by the dt parameter
+    * to ensure the game runs at the same speed for
+    * all computers.
+    */
+    for(let enemy of allEnemies){
+        if(enemy.x < 435) {
+            // move forward
+            enemy.x += 50 * dt;
+        }
+
+    }
+
     // else
         // reset pos to start
 };
@@ -54,11 +57,13 @@ const Player = function() {
 
 // Player methods:
 Player.prototype.update = function() {
-    // Check for player collison
+    /* 2D Collision Detection via MDN https://developer.mozilla.org/en-US/docs/Games/Techniques/2D_collision_detection
+     * Check for player collison
+     */
     for(let enemy of allEnemies){
         if(this.x < enemy.x + 50 && this.x + 50 > enemy.x && this.y < enemy.y + 40 && this.y + 40 > enemy.y) {
 
-            // where's the collision location
+            // where's the collision?
             console.log(`Player: x: ${player.x}, y: ${player.y}`);
             console.log(`Enemy: x: ${enemy.x}, y: ${enemy.y}`);
 
@@ -111,7 +116,6 @@ let fastBug = new Enemy(0, 150);
 let randomBug = new Enemy(0, 230);
 
 allEnemies.push(slowBug, fastBug, randomBug);
-
 
 // This listens for user keyboard presses for player character
 document.addEventListener('keydown', function(event) {
