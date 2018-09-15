@@ -16,6 +16,11 @@ Colliding with an enemy bug, knocks Frogger back to the beginning of the path, b
 
 **To move Frogger:** Use your keyboard's directional arrows (up :arrow_up:, right :arrow_right:, down :arrow_down:, left :arrow_left:) to maneuver around the platform.
 
+Screenshot of Memory Game during play
+--------
+
+![](images/screenshot-classic-arcade-game-play.png)
+
 Resources
 --------
 
