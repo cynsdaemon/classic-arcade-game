@@ -34,18 +34,20 @@ let Engine = (function(global) {
     const replayGame = document.querySelector('#replayGame');
     const closeModal = document.querySelector('#closeModal');
 
-    /* Event listeners for game modal */
+    /* Event listeners for replay/game modal */
     replayGame.addEventListener('click', function(){
-        // reset player
-        // reset enemies
-        // reset score, if applicable
-        // reset/hide game modal
+        reset();
     });
 
-    closeModal.addEventListener('click', function(){
+    function hideModal(){
         gameModal.style.display = "none";
+    };
+    closeModal.addEventListener('click', hideModal, false);
 
-    });
+    function showModal(){
+        gameModal.style.display = "block";
+    };
+
 
     /* This function serves as the kickoff point for the game loop itself
      * and handles properly calling the update and render methods.
@@ -76,13 +78,16 @@ let Engine = (function(global) {
          */
 
         /* Check for victory, if true - stop game loop, display game modal */
-        if(player.victory === true) {
-            win.cancelAnimationFrame(id);
-            gameModal.style.display = "block";
-        } else {
-            id = win.requestAnimationFrame(main);
+        function checkForVictory(){
+            if(player.victory === true) {
+                win.cancelAnimationFrame(id);
+                showModal();
+            } else {
+                id = win.requestAnimationFrame(main);
+            }
         }
 
+        checkForVictory();
     }
 
     /* This function does some initial setup that should only occur once,
@@ -188,7 +193,18 @@ let Engine = (function(global) {
      * those sorts of things. It's only called once by the init() method.
      */
     function reset() {
-        // noop
+        // reset score, if applicable
+        hideModal();
+        player.victory = false;
+
+        player.resetHero();
+
+        for(let enemy of allEnemies){
+            enemy.resetEnemies();
+        }
+
+        win.requestAnimationFrame(main);
+
     }
 
     /* Go ahead and load all of the images we know we're going to need to

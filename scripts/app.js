@@ -61,7 +61,7 @@ const Player = function() {
     // set player img
     this.sprite = 'images/char-cat-girl.png';
 
-    // set game victory variable
+    // set player victory variable
     this.victory = false;
 
 };
@@ -69,7 +69,7 @@ const Player = function() {
 // Player methods:
 Player.prototype.update = function() {
     /* 2D Collision Detection via MDN https://developer.mozilla.org/en-US/docs/Games/Techniques/2D_collision_detection
-     * Check for player collison
+     * Check for player collison - compares the x,y coords + width/height of objects
      */
     for(let enemy of allEnemies){
         if(this.x < enemy.x + 50 && this.x + 50 > enemy.x && this.y < enemy.y + 40 && this.y + 40 > enemy.y) {
@@ -108,7 +108,7 @@ Player.prototype.handleInput = function(key) {
     if(key === 'up' && this.y >= this.upBoundaryY) {
         this.y -= 50;
     } else if(key === 'right' && this.x <= this.rightBoundaryX) {
-        this.x +=50;
+        this.x += 50;
 
     } else if(key === 'down' && this.y <=  this.downBoundaryY) {
         this.y += 50;
@@ -122,9 +122,9 @@ Player.prototype.handleInput = function(key) {
 const player = new Player();
 const allEnemies = [];
 
-let slowBug = new Enemy(0, 65, 25);
-let fastBug = new Enemy(0, 150, 50);
-let randomBug = new Enemy(0, 230, 50);
+let slowBug = new Enemy(-10, 55, 25);
+let fastBug = new Enemy(-10, 150, 50);
+let randomBug = new Enemy(-10, 230, 15);
 allEnemies.push(slowBug, fastBug, randomBug);
 
 // This listens for user keyboard presses for player character
