@@ -9,9 +9,6 @@ const Enemy = function(x, y, speed) {
     this.x = x;
     this.y = y;
 
-    this.startX = this.x;
-    this.startY = this.y;
-
     // enemy behavior
     this.speed = speed;
 
@@ -37,11 +34,8 @@ Enemy.prototype.update = function(dt) {
 };
 
 Enemy.prototype.resetEnemies = function(){
-
     for(let enemy of allEnemies){
-
         this.x = 0;
-
     }
 };
 
@@ -57,6 +51,12 @@ const Player = function() {
 
     this.startX = this.x;
     this.startY = this.y;
+
+    // player behavior
+    this.upBoundaryY = -14;
+    this.rightBoundaryX = 399;
+    this.downBoundaryY = 434;
+    this.leftBoundaryX = 1;
 
     // set player img
     this.sprite = 'images/char-cat-girl.png';
@@ -103,22 +103,20 @@ Player.prototype.render = function() {
     ctx.drawImage(Resources.get(this.sprite), this.x, this.y);
 };
 
-// handle user keyboard input
+// player keyboard input
 Player.prototype.handleInput = function(key) {
-    if(key === 'up' && player.y >= -14) {
+    if(key === 'up' && this.y >= this.upBoundaryY) {
         this.y -= 50;
-    } else if(key === 'right' && this.x <= ctx.canvas.width - 106) {
+    } else if(key === 'right' && this.x <= this.rightBoundaryX) {
         this.x +=50;
 
-    } else if(key === 'down' && this.y <= ctx.canvas.height - 70) {
+    } else if(key === 'down' && this.y <=  this.downBoundaryY) {
         this.y += 50;
 
-    } else if(key === 'left' && this.x >= 1){
+    } else if(key === 'left' && this.x >= this.leftBoundaryX){
         this.x -= 50;
     }
 };
-
-
 
 /*** init Player/Enemy objects ***/
 const player = new Player();
@@ -126,9 +124,8 @@ const allEnemies = [];
 
 let slowBug = new Enemy(0, 65, 25);
 let fastBug = new Enemy(0, 150, 50);
-// let randomBug = new Enemy(0, 230);
-
-allEnemies.push(slowBug, fastBug);
+let randomBug = new Enemy(0, 230, 50);
+allEnemies.push(slowBug, fastBug, randomBug);
 
 // This listens for user keyboard presses for player character
 document.addEventListener('keydown', function(event) {
