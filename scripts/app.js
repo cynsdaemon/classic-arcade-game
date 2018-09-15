@@ -28,7 +28,7 @@ Enemy.prototype.update = function(dt) {
             this.x += this.speed * dt;
         } else {
             // reset enemy
-            enemy.resetEnemies();
+            this.resetEnemies();
         }
     }
 };
