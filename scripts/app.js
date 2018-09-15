@@ -82,14 +82,14 @@ Player.prototype.update = function() {
             console.log("Collision detected!");
 
             // reset player position
-            player.resetHero();
+            this.resetHero();
         }
     }
 
     // check for win
     if(player.y === -15) {
-        player.resetHero();
-        player.victory = true;
+        this.resetHero();
+        this.victory = true;
     }
 
 };
