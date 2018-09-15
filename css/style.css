@@ -3,7 +3,7 @@ body {
     color: #333;
     text-align: center;
     text-transform: capitalize;
-    background: #c3c3c3;
+    background: #c3c3c3; /* bg fallback */
     background: #ffffff url('../images/geometry2.png'); /* Background pattern from Subtle Patterns */
 
 }
