@@ -22,21 +22,19 @@ Enemy.prototype.update = function(dt) {
     * to ensure the game runs at the same speed for
     * all computers.
     */
-    for(let enemy of allEnemies){
-        if(this.x <= ctx.canvas.width && player.victory === false) {
-            // move forward
-            this.x += this.speed * dt;
-        } else {
-            // reset enemy
-            this.resetEnemies();
-        }
+    if(this.x <= ctx.canvas.width && player.victory === false) {
+        // move forward
+        this.x += this.speed * dt;
+    } else {
+        // reset enemy
+        this.resetEnemies();
     }
+
 };
 
 Enemy.prototype.resetEnemies = function(){
-    for(let enemy of allEnemies){
         this.x = 0;
-    }
+
 };
 
 Enemy.prototype.render = function() {
@@ -66,32 +64,26 @@ const Player = function() {
 
 };
 
-// Player methods:
 Player.prototype.update = function() {
     /* 2D Collision Detection via MDN https://developer.mozilla.org/en-US/docs/Games/Techniques/2D_collision_detection
      * Check for player collison - compares the x,y coords + width/height of objects
      */
     for(let enemy of allEnemies){
         if(this.x < enemy.x + 50 && this.x + 50 > enemy.x && this.y < enemy.y + 40 && this.y + 40 > enemy.y) {
-
             // where's the collision?
             console.log(`Player: x: ${player.x}, y: ${player.y}`);
             console.log(`Enemy: x: ${enemy.x}, y: ${enemy.y}`);
-
             // collision detected!
-            console.log("Collision detected!");
-
+            alert("Collision detected!");
             // reset player position
             this.resetHero();
         }
     }
-
-    // check for win
-    if(player.y === -15) {
-        this.resetHero();
-        this.victory = true;
-    }
-
+        // check for win
+        if(this.y === -15) {
+            this.resetHero();
+            this.victory = true;
+        }
 };
 
 Player.prototype.resetHero = function(){
