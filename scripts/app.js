@@ -8,10 +8,8 @@ const Enemy = function(x, y, speed) {
     // enemy position
     this.x = x;
     this.y = y;
-
     // enemy behavior
     this.speed = speed;
-
     // set enemy img
     this.sprite = 'images/enemy-bug.png';
 };
@@ -34,7 +32,6 @@ Enemy.prototype.update = function(dt) {
 
 Enemy.prototype.resetEnemies = function(){
         this.x = 0;
-
 };
 
 Enemy.prototype.render = function() {
@@ -69,6 +66,8 @@ Player.prototype.update = function() {
      * Check for player collison - compares the x,y coords + width/height of objects
      */
     for(let enemy of allEnemies){
+
+        // check to see if the sides of the images/objects are touching
         if(this.x < enemy.x + 50 && this.x + 50 > enemy.x && this.y < enemy.y + 40 && this.y + 40 > enemy.y) {
             // where's the collision?
             console.log(`Player: x: ${player.x}, y: ${player.y}`);
