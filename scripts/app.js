@@ -73,7 +73,7 @@ Player.prototype.update = function() {
             console.log(`Player: x: ${player.x}, y: ${player.y}`);
             console.log(`Enemy: x: ${enemy.x}, y: ${enemy.y}`);
             // collision detected!
-            alert("Collision detected!");
+            console.log("Collision detected!");
             // reset player position
             this.resetHero();
         }
