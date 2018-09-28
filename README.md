@@ -8,7 +8,7 @@ This project is an exploration in using object-oriented programming concepts to 
 
 You may view the live project [here](https://cynsdaemon.github.io/classic-arcade-game/). Note: You will need to use a modern web browser and have JavaScript enabled.
 
-**To run game on a local machine** Download or clone the project and open this project's HTML file on your web browser with JavaScript enabled.
+**To run game on a local machine** Clone or download and unzip this repo. Open this project's ```index.html``` file in your web browser with JavaScript enabled.
 
 How to play
 --------
