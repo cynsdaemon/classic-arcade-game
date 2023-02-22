@@ -42,5 +42,5 @@ For feedback and suggestions feel free to open an [issue on Github](https://gith
 License
 --------
 
-This project is build with love :heart: coffee :coffee: and an awesome playlist :musical_note:. Copyright &copy; 2022 [Cynthia Wright](https://heycynwritescodeinpjs.com).
+This project is build with love :heart: coffee :coffee: and an awesome playlist :musical_note:. Copyright &copy; 2022 [Cynthia Wright](https://heycynwrites.com).
 
