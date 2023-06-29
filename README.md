@@ -36,5 +36,5 @@ This project uses the following style guides and repositories:
 License
 --------
 
-For **feedback** and suggestions feel free to [open an issue on Github](https://github.com/cynsdaemon/classic-arcade-game/issues) for this project. This project is build with love :heart: coffee :coffee: and an awesome playlist :musical_note:. Copyright &copy; 2023-2025 [Cynthia Wright](https://heycynwrites.com).
+For **feedback** and suggestions feel free to [open an issue on Github](https://github.com/cynsdaemon/classic-arcade-game/issues) for this project. This project is build with love :heart: coffee :coffee: and an awesome playlist :musical_note:. Copyright &copy; 2023-2025 [@heycynwrites](https://heycynwrites.com).
 
